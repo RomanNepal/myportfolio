@@ -32,7 +32,6 @@ function App() {
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
-    console.log("scrollPosition:", scrollPosition);
     sections.forEach((section) => {
       const element = document.getElementById(section.id);
       if (element) {
@@ -42,7 +41,6 @@ function App() {
           scrollPosition < offsetTop + offsetHeight
         ) {
           setActiveSectionId(section.id);
-          console.log("section id: ", section.id);
         }
       }
     });
@@ -70,7 +68,6 @@ function App() {
       <div
         className="flex rounded-[20px] fixed right-24 top-4"
         onClick={() => {
-          console.log("clicked");
           handleThemeSwitch();
         }}
       >
