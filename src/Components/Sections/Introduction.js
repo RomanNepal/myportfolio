@@ -1,11 +1,10 @@
 import React, { useRef } from "react";
 import Title from "./Title";
 
-const Introduction = ({ active }) => {
+const Introduction = () => {
   const introRef = useRef(null);
-  //   if (active === "home") {
-  //     introRef.current?.scrollIntoView({ behavior: "smooth" });
-  //   }
+  const currentDate = new Date();
+  const totalYear = currentDate.getFullYear() - 2021;
   const Icon = () => {
     return (
       <svg
@@ -25,20 +24,35 @@ const Introduction = ({ active }) => {
     );
   };
   return (
-    <div className="flex flex-col gap-10 mt-[8%]" ref={introRef}>
-      <Title Icon={Icon}>Introduction</Title>
+    <div
+      className="flex flex-col gap-10 mt-[8%] justify-between h-full"
+      ref={introRef}
+    >
+      <div className="flex flex-col gap-10">
+        <Title Icon={Icon}>Introduction</Title>
 
-      <div className="dark:text-white font-light text-7xl leading-[5rem]">
-        <div className="flex">
-          <div>Say Hi from</div>
-          <div className="ml-6 text-[#28E98C]"> Roman</div>
-          <div>,</div>
-        </div>{" "}
-        <p>Web Designer and Developer</p>
+        <div className="dark:text-white font-light text-7xl leading-[5rem]">
+          <div className="flex">
+            <div>Say Hi from</div>
+            <div className="ml-6 text-[#28E98C]"> Roman</div>
+            <div>,</div>
+          </div>{" "}
+          <p>Web Designer and Developer</p>
+        </div>
+        <div className="dark:text-[#939393] font-medium text-sm">
+          I design and develop modern websites with outmost focus on user
+          experience
+        </div>
       </div>
-      <div className="dark:text-[#939393] font-medium text-sm">
-        I design and develop modern websites with outmost focus on user
-        experience
+      <div className="flex mb-[20%] dark:text-white gap-[15%]">
+        <div className="w-[10%] flex flex-col gap-8">
+          <p className="text-[#28E98C] text-7xl font-[300]">{totalYear}+</p>
+          <p className="text-gray-400">Years of experience</p>
+        </div>
+        <div className="w-[20%] flex flex-col gap-8">
+          <p className="text-[#28E98C] text-7xl font-[300]">10+</p>
+          <p className="text-gray-400">10+ projects completed</p>
+        </div>
       </div>
     </div>
   );
