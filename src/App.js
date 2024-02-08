@@ -8,6 +8,7 @@ import About from "./Components/Sections/About";
 import useIsInViewport from "./Hooks/useIsInViewport";
 import Resume from "./Components/Sections/Resume";
 import Skills from "./Components/Sections/Skills";
+import Portfolio from "./Components/Sections/Portfolio";
 function App() {
   const [theme, setTheme] = useState("dark");
   const [active, setActive] = useState("home");
@@ -75,15 +76,7 @@ function App() {
       >
         <Switch />
       </div>
-      {/* <button
-        className="bg-green-200 p-4 rounded-md fixed right-0 top-4"
-        onClick={() => {
-          console.log("clicked");
-          handleThemeSwitch();
-        }}
-      >
-        Toggle Dark Mode
-      </button> */}
+
       <div className="h-[80vh] w-[20%] border dark:border-gray-600 border-gray-200 rounded-3xl fixed left-10 block top-[50%] translate-x-[10%] translate-y-[-50%]">
         Hello
       </div>
@@ -104,7 +97,7 @@ function App() {
         <Skills />
       </div>
       <div className="ml-[33%] mr-[20%] h-[100vh] flex flex-col" id="section5">
-        <Skills />
+        <Portfolio />
       </div>
     </div>
   );

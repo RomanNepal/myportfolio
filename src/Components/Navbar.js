@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import Tooltip from "./Tooltip";
 
 const Navbar = ({ sections, active, setActive, activeSectionId }) => {
+  const [over, setOver] = useState("");
   const handleNavClick = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
+  };
+  const handleHover = (e, sectionId) => {
+    setOver(sectionId);
+  };
+  const removeHover = (e) => {
+    setOver("");
   };
   return (
     <div className="w-8 p-6 flex flex-col justify-center items-center gap-4 border border-gray-500 rounded-3xl">
@@ -13,21 +21,38 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         className={
           (activeSectionId === "section1"
             ? "text-[#28E98C]"
-            : "dark:text-white text-black hover:text-[#28E98C]") +
-          " cursor-pointer transition duration-500 ease-in-out"
+            : "dark:text-white text-black") +
+          " cursor-pointer transition duration-500 ease-in-out relative"
         }
         onClick={() => {
           handleNavClick("section1");
           sections[0].onClick("section1");
         }}
+        onMouseEnter={(e) => {
+          handleHover(e, "section1");
+        }}
+        onMouseLeave={(e) => {
+          removeHover();
+        }}
       >
+        <div
+          className={
+            (over === "section1" ? "flex" : "hidden") +
+            " absolute left-[-7rem] px-2 items-center w-[6rem] text-gray-400 transtition duration-500 ease-in"
+          }
+        >
+          <div className="bg-gray-700 w-[80%]  p-1 flex justify-center rounded-t-[5px] rounded-b-[5px] text-xs">
+            Home
+          </div>
+          <div className="w-[20%] h-[8px] border-gray-700 border-[6px] border-r-transparent border-t-transparent border-b-transparent"></div>
+        </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.3"
           stroke="currentColor"
-          className="w-5 h-5"
+          className="w-5 h-5 hover:text-[#28E98C]"
         >
           <path
             stroke-linecap="round"
@@ -41,20 +66,37 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
           (activeSectionId === "section2"
             ? "text-[#28E98C]"
             : "dark:text-white text-black hover:text-[#28E98C]") +
-          " cursor-pointer transition duration-500 ease-in-out"
+          " cursor-pointer transition duration-500 ease-in-out relative"
         }
         onClick={() => {
           handleNavClick("section2");
           sections[0].onClick("section2");
         }}
+        onMouseEnter={(e) => {
+          handleHover(e, "section2");
+        }}
+        onMouseLeave={(e) => {
+          removeHover();
+        }}
       >
+        <div
+          className={
+            (over === "section2" ? "flex" : "hidden") +
+            " absolute left-[-7rem] px-2 items-center w-[6rem] text-gray-400 transtition duration-500 ease-in"
+          }
+        >
+          <div className="bg-gray-700 w-[80%]  p-1 flex justify-center rounded-t-[5px] rounded-b-[5px] text-xs">
+            About
+          </div>
+          <div className="w-[20%] h-[12px] border-gray-700 border-[8px] border-r-transparent border-t-transparent border-b-transparent"></div>
+        </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.3"
           stroke="currentColor"
-          className="w-5 h-5"
+          className="w-5 h-5 hover:text-[#28E98C]"
         >
           <path
             stroke-linecap="round"
@@ -68,20 +110,37 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
           (activeSectionId === "section3"
             ? "text-[#28E98C]"
             : "dark:text-white text-black hover:text-[#28E98C]") +
-          " cursor-pointer"
+          " cursor-pointer relative"
         }
         onClick={() => {
           handleNavClick("section3");
           sections[0].onClick("section3");
         }}
+        onMouseEnter={(e) => {
+          handleHover(e, "section3");
+        }}
+        onMouseLeave={(e) => {
+          removeHover();
+        }}
       >
+        <div
+          className={
+            (over === "section3" ? "flex" : "hidden") +
+            " absolute left-[-7rem] px-2 items-center w-[6rem] text-gray-400 transtition duration-500 ease-in"
+          }
+        >
+          <div className="bg-gray-700 w-[80%]  p-1 flex justify-center rounded-t-[5px] rounded-b-[5px] text-xs">
+            Resume
+          </div>
+          <div className="w-[20%] h-[12px] border-gray-700 border-[8px] border-r-transparent border-t-transparent border-b-transparent"></div>
+        </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.3"
           stroke="currentColor"
-          className="w-5 h-5"
+          className="w-5 h-5 hover:text-[#28E98C]"
         >
           <path
             stroke-linecap="round"
@@ -123,13 +182,30 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
           (activeSectionId === "section4"
             ? "text-[#28E98C]"
             : "dark:text-white text-black hover:text-[#28E98C]") +
-          " cursor-pointer transition duration-500 ease-in-out"
+          " cursor-pointer transition duration-500 ease-in-out relative"
         }
         onClick={() => {
           handleNavClick("section4");
           sections[0].onClick("section4");
         }}
+        onMouseEnter={(e) => {
+          handleHover(e, "section4");
+        }}
+        onMouseLeave={(e) => {
+          removeHover();
+        }}
       >
+        <div
+          className={
+            (over === "section4" ? "flex" : "hidden") +
+            " absolute left-[-7rem] px-2 items-center w-[6rem] text-gray-400 transtition duration-500 ease-in"
+          }
+        >
+          <div className="bg-gray-700 w-[80%]  p-1 flex justify-center rounded-t-[5px] rounded-b-[5px] text-xs">
+            Skills
+          </div>
+          <div className="w-[20%] h-[12px] border-gray-700 border-[8px] border-r-transparent border-t-transparent border-b-transparent"></div>
+        </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -147,48 +223,45 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
       </div>
       <div
         className={
-          (active === "resume"
+          (activeSectionId === "section5"
             ? "text-[#28E98C]"
             : "dark:text-white text-black hover:text-[#28E98C]") +
-          " cursor-pointer"
+          " cursor-pointer transition duration-500 ease-in-out relative"
         }
+        onClick={() => {
+          handleNavClick("section5");
+          sections[0].onClick("section5");
+        }}
+        onMouseEnter={(e) => {
+          handleHover(e, "section5");
+        }}
+        onMouseLeave={(e) => {
+          removeHover();
+        }}
       >
+        <div
+          className={
+            (over === "section5" ? "flex" : "hidden") +
+            " absolute left-[-7rem] px-2 items-center w-[6rem] text-gray-400 transtition duration-500 ease-in"
+          }
+        >
+          <div className="bg-gray-700 w-[80%]  p-1 flex justify-center rounded-t-[5px] rounded-b-[5px] text-xs">
+            Portfolio
+          </div>
+          <div className="w-[20%] h-[12px] border-gray-700 border-[8px] border-r-transparent border-t-transparent border-b-transparent"></div>
+        </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.3"
           stroke="currentColor"
-          className="w-5 h-5"
+          className="w-5 h-5 hover:text-[#28E98C]"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z"
-          />
-        </svg>
-      </div>
-      <div
-        className={
-          (active === "resume"
-            ? "text-[#28E98C]"
-            : "dark:text-white text-black hover:text-[#28E98C]") +
-          " cursor-pointer"
-        }
-        // onClick={() => setActive("resume")}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.3"
-          stroke="currentColor"
-          className="w-5 h-5"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z"
+            d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
           />
         </svg>
       </div>

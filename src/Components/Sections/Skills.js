@@ -4,6 +4,12 @@ import useIsInViewport from "../../Hooks/useIsInViewport";
 import html from "../../Images/html.webp";
 import css from "../../Images/css.png";
 import js from "../../Images/js.webp";
+import react from "../../Images/react.webp";
+import node from "../../Images/node.jpg";
+import express from "../../Images/express.png";
+import mongo from "../../Images/mongo.jpg";
+import next from "../../Images/next.png";
+import SkillsCard from "../SkillsCard";
 const Skills = ({ active }) => {
   const Icon = () => {
     return (
@@ -26,34 +32,15 @@ const Skills = ({ active }) => {
   return (
     <div className="flex flex-col gap-10 mt-[8%]">
       <Title Icon={Icon}>Skills</Title>
-      <div className="flex gap-10 text-sm">
-        <div>
-          <div className="h-24 w-24 rounded-full flex items-center overflow-hidden">
-            <img
-              src={html}
-              style={{ objectFit: "cover", height: "125%", width: "125%" }}
-            ></img>
-          </div>
-          <p className="dark:text-white text-center mt-4">HTML</p>
-        </div>
-        <div>
-          <div className="h-24 w-24 rounded-full flex items-center overflow-hidden">
-            <img
-              src={css}
-              style={{ objectFit: "cover", height: "125%", width: "125%" }}
-            ></img>
-          </div>
-          <p className="dark:text-white text-center mt-4">CSS</p>
-        </div>
-        <div>
-          <div className="h-24 w-24 rounded-full flex items-center overflow-hidden">
-            <img
-              src={js}
-              style={{ objectFit: "cover", height: "125%", width: "125%" }}
-            ></img>
-          </div>
-          <p className="dark:text-white text-center mt-4">Javascript</p>
-        </div>
+      <div className="flex flex-wrap gap-10 text-sm">
+        <SkillsCard src={html} title={"html"} />
+        <SkillsCard src={css} title={"css"} />
+        <SkillsCard src={js} title={"javascript"} />
+        <SkillsCard src={react} title={"react"} />
+        <SkillsCard src={next} title={"next js"} />
+        <SkillsCard src={node} title={"node js"} />
+        <SkillsCard src={express} title={"express"} />
+        <SkillsCard src={mongo} title={"mongo"} />
       </div>
     </div>
   );
