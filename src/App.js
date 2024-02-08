@@ -11,6 +11,7 @@ import Resume from "./Components/Sections/Resume";
 import Skills from "./Components/Sections/Skills";
 import Portfolio from "./Components/Sections/Portfolio";
 import photo from "./Images/photo.jpg";
+import { loadBasic } from "@tsparticles/basic";
 function App() {
   const [init, setInit] = useState(false);
   const [theme, setTheme] = useState("dark");
@@ -76,8 +77,8 @@ function App() {
       // starting from v2 you can add only the features you need reducing the bundle size
       //await loadAll(engine);
       //await loadFull(engine);
-      await loadSlim(engine);
-      //await loadBasic(engine);
+      // await loadSlim(engine);
+      await loadBasic(engine);
     }).then(() => {
       setInit(true);
     });
