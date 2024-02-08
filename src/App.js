@@ -83,7 +83,7 @@ function App() {
   };
   return (
     <>
-      {init && (
+      {init ? (
         <Particles
           id="tsparticles"
           particlesLoaded={particlesLoaded}
@@ -93,7 +93,7 @@ function App() {
                 value: "gray",
               },
             },
-            fpsLimit: 120,
+            fpsLimit: 60,
             interactivity: {
               events: {
                 onClick: {
@@ -134,7 +134,7 @@ function App() {
                   default: "bounce",
                 },
                 random: false,
-                speed: 6,
+                speed: 2,
                 straight: false,
               },
               number: {
@@ -157,6 +157,8 @@ function App() {
             detectRetina: true,
           }}
         />
+      ) : (
+        ""
       )}
       <div className="bg-white dark:bg-[#1B1B1B] transition duration-500 ease-in-out flex flex-col font-inter">
         <div
