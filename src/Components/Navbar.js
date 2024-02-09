@@ -16,13 +16,13 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
     setOver("");
   };
   return (
-    <div className="w-8 p-6 flex flex-col justify-center items-center gap-4 border border-gray-500 rounded-3xl">
+    <div className="z-10 flex w-8 flex-col items-center justify-center gap-4 rounded-3xl border border-gray-500 p-6">
       <div
         className={
           (activeSectionId === "section1"
             ? "text-[#28E98C]"
-            : "dark:text-white text-black") +
-          " cursor-pointer transition duration-500 ease-in-out relative"
+            : "text-black dark:text-white") +
+          " relative cursor-pointer transition duration-500 ease-in-out"
         }
         onClick={() => {
           handleNavClick("section1");
@@ -38,13 +38,13 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         <div
           className={
             (over === "section1" ? "flex" : "hidden") +
-            " absolute left-[-7rem] px-2 items-center w-[6rem] text-gray-400 transtition duration-500 ease-in"
+            " transtition absolute left-[-7rem] w-[6rem] items-center px-2 text-gray-400 duration-500 ease-in"
           }
         >
-          <div className="bg-gray-700 w-[80%]  p-1 flex justify-center rounded-t-[5px] rounded-b-[5px] text-xs">
+          <div className="flex w-[80%]  justify-center rounded-b-[5px] rounded-t-[5px] bg-gray-700 p-1 text-xs">
             Home
           </div>
-          <div className="w-[20%] h-[8px] border-gray-700 border-[6px] border-r-transparent border-t-transparent border-b-transparent"></div>
+          <div className="h-[8px] w-[20%] border-[6px] border-gray-700 border-b-transparent border-r-transparent border-t-transparent"></div>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
           viewBox="0 0 24 24"
           stroke-width="1.3"
           stroke="currentColor"
-          className="w-5 h-5 hover:text-[#28E98C]"
+          className="h-5 w-5 hover:text-[#28E98C]"
         >
           <path
             stroke-linecap="round"
@@ -65,8 +65,8 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         className={
           (activeSectionId === "section2"
             ? "text-[#28E98C]"
-            : "dark:text-white text-black hover:text-[#28E98C]") +
-          " cursor-pointer transition duration-500 ease-in-out relative"
+            : "text-black hover:text-[#28E98C] dark:text-white") +
+          " relative cursor-pointer transition duration-500 ease-in-out"
         }
         onClick={() => {
           handleNavClick("section2");
@@ -82,13 +82,13 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         <div
           className={
             (over === "section2" ? "flex" : "hidden") +
-            " absolute left-[-7rem] px-2 items-center w-[6rem] text-gray-400 transtition duration-500 ease-in"
+            " transtition absolute left-[-7rem] w-[6rem] items-center px-2 text-gray-400 duration-500 ease-in"
           }
         >
-          <div className="bg-gray-700 w-[80%]  p-1 flex justify-center rounded-t-[5px] rounded-b-[5px] text-xs">
+          <div className="flex w-[80%]  justify-center rounded-b-[5px] rounded-t-[5px] bg-gray-700 p-1 text-xs">
             About
           </div>
-          <div className="w-[20%] h-[12px] border-gray-700 border-[8px] border-r-transparent border-t-transparent border-b-transparent"></div>
+          <div className="h-[12px] w-[20%] border-[8px] border-gray-700 border-b-transparent border-r-transparent border-t-transparent"></div>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
           viewBox="0 0 24 24"
           stroke-width="1.3"
           stroke="currentColor"
-          className="w-5 h-5 hover:text-[#28E98C]"
+          className="h-5 w-5 hover:text-[#28E98C]"
         >
           <path
             stroke-linecap="round"
@@ -109,8 +109,8 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         className={
           (activeSectionId === "section3"
             ? "text-[#28E98C]"
-            : "dark:text-white text-black hover:text-[#28E98C]") +
-          " cursor-pointer relative"
+            : "text-black hover:text-[#28E98C] dark:text-white") +
+          " relative cursor-pointer"
         }
         onClick={() => {
           handleNavClick("section3");
@@ -126,13 +126,13 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         <div
           className={
             (over === "section3" ? "flex" : "hidden") +
-            " absolute left-[-7rem] px-2 items-center w-[6rem] text-gray-400 transtition duration-500 ease-in"
+            " transtition absolute left-[-7rem] w-[6rem] items-center px-2 text-gray-400 duration-500 ease-in"
           }
         >
-          <div className="bg-gray-700 w-[80%]  p-1 flex justify-center rounded-t-[5px] rounded-b-[5px] text-xs">
+          <div className="flex w-[80%]  justify-center rounded-b-[5px] rounded-t-[5px] bg-gray-700 p-1 text-xs">
             Resume
           </div>
-          <div className="w-[20%] h-[12px] border-gray-700 border-[8px] border-r-transparent border-t-transparent border-b-transparent"></div>
+          <div className="h-[12px] w-[20%] border-[8px] border-gray-700 border-b-transparent border-r-transparent border-t-transparent"></div>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +140,7 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
           viewBox="0 0 24 24"
           stroke-width="1.3"
           stroke="currentColor"
-          className="w-5 h-5 hover:text-[#28E98C]"
+          className="h-5 w-5 hover:text-[#28E98C]"
         >
           <path
             stroke-linecap="round"
@@ -181,8 +181,8 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         className={
           (activeSectionId === "section4"
             ? "text-[#28E98C]"
-            : "dark:text-white text-black hover:text-[#28E98C]") +
-          " cursor-pointer transition duration-500 ease-in-out relative"
+            : "text-black hover:text-[#28E98C] dark:text-white") +
+          " relative cursor-pointer transition duration-500 ease-in-out"
         }
         onClick={() => {
           handleNavClick("section4");
@@ -198,13 +198,13 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         <div
           className={
             (over === "section4" ? "flex" : "hidden") +
-            " absolute left-[-7rem] px-2 items-center w-[6rem] text-gray-400 transtition duration-500 ease-in"
+            " transtition absolute left-[-7rem] w-[6rem] items-center px-2 text-gray-400 duration-500 ease-in"
           }
         >
-          <div className="bg-gray-700 w-[80%]  p-1 flex justify-center rounded-t-[5px] rounded-b-[5px] text-xs">
+          <div className="flex w-[80%]  justify-center rounded-b-[5px] rounded-t-[5px] bg-gray-700 p-1 text-xs">
             Skills
           </div>
-          <div className="w-[20%] h-[12px] border-gray-700 border-[8px] border-r-transparent border-t-transparent border-b-transparent"></div>
+          <div className="h-[12px] w-[20%] border-[8px] border-gray-700 border-b-transparent border-r-transparent border-t-transparent"></div>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +212,7 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
           viewBox="0 0 24 24"
           stroke-width="1.3"
           stroke="currentColor"
-          class="w-5 h-5"
+          class="h-5 w-5"
         >
           <path
             stroke-linecap="round"
@@ -225,8 +225,8 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         className={
           (activeSectionId === "section5"
             ? "text-[#28E98C]"
-            : "dark:text-white text-black hover:text-[#28E98C]") +
-          " cursor-pointer transition duration-500 ease-in-out relative"
+            : "text-black hover:text-[#28E98C] dark:text-white") +
+          " relative cursor-pointer transition duration-500 ease-in-out"
         }
         onClick={() => {
           handleNavClick("section5");
@@ -242,13 +242,13 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         <div
           className={
             (over === "section5" ? "flex" : "hidden") +
-            " absolute left-[-7rem] px-2 items-center w-[6rem] text-gray-400 transtition duration-500 ease-in"
+            " transtition absolute left-[-7rem] w-[6rem] items-center px-2 text-gray-400 duration-500 ease-in"
           }
         >
-          <div className="bg-gray-700 w-[80%]  p-1 flex justify-center rounded-t-[5px] rounded-b-[5px] text-xs">
+          <div className="flex w-[80%]  justify-center rounded-b-[5px] rounded-t-[5px] bg-gray-700 p-1 text-xs">
             Portfolio
           </div>
-          <div className="w-[20%] h-[12px] border-gray-700 border-[8px] border-r-transparent border-t-transparent border-b-transparent"></div>
+          <div className="h-[12px] w-[20%] border-[8px] border-gray-700 border-b-transparent border-r-transparent border-t-transparent"></div>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -256,7 +256,7 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
           viewBox="0 0 24 24"
           stroke-width="1.3"
           stroke="currentColor"
-          className="w-5 h-5 hover:text-[#28E98C]"
+          className="h-5 w-5 hover:text-[#28E98C]"
         >
           <path
             stroke-linecap="round"

@@ -13,7 +13,7 @@ const Introduction = () => {
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-4 h-4"
+        class="h-4 w-4"
       >
         <path
           stroke-linecap="round"
@@ -25,32 +25,34 @@ const Introduction = () => {
   };
   return (
     <div
-      className="flex flex-col gap-10 mt-[8%] justify-between h-full"
+      className="mt-[8%] flex h-full flex-col justify-between gap-10 border-gray-200"
       ref={introRef}
     >
       <div className="flex flex-col gap-10">
         <Title Icon={Icon}>Introduction</Title>
 
-        <div className="dark:text-white font-light text-7xl leading-[5rem]">
-          <div className="flex">
+        <div className="text-6xl font-light leading-[4rem] dark:text-white md:text-7xl md:leading-[5rem]">
+          <div className="flex flex-wrap">
             <div>Say Hi from</div>
-            <div className="ml-6 text-[#28E98C]"> Roman</div>
+            <div className="text-[#28E98C] md:ml-6"> Roman</div>
             <div>,</div>
           </div>{" "}
-          <p>Web Designer and Developer</p>
+          <p>Web Designer & Developer</p>
         </div>
-        <div className="dark:text-[#939393] font-medium text-sm">
+        <div className="text-sm font-medium dark:text-[#939393]">
           I design and develop modern websites with outmost focus on user
           experience
         </div>
       </div>
-      <div className="flex mb-[20%] dark:text-white gap-[15%]">
-        <div className="w-[10%] flex flex-col gap-8">
-          <p className="text-[#28E98C] text-7xl font-[300]">{totalYear}+</p>
+      <div className="mb-[20%] flex justify-start gap-[30%] dark:text-white md:gap-[15%]">
+        <div className="flex w-[20%] flex-col gap-8 md:w-[10%]">
+          <p className="text-6xl font-[300] text-[#28E98C] md:text-7xl">
+            {totalYear}+
+          </p>
           <p className="text-gray-400">Years of experience</p>
         </div>
-        <div className="w-[20%] flex flex-col gap-8">
-          <p className="text-[#28E98C] text-7xl font-[300]">10+</p>
+        <div className="flex flex-col gap-8 md:w-[20%]">
+          <p className="text-6xl font-[300] text-[#28E98C] md:text-7xl">10+</p>
           <p className="text-gray-400">10+ projects completed</p>
         </div>
       </div>
