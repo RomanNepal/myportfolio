@@ -23,7 +23,7 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
           className={
             (activeSectionId === "section1"
               ? "text-[#28E98C]"
-              : "text-black dark:text-white") +
+              : "text-white dark:text-white") +
             " relative flex cursor-pointer items-center gap-3 transition duration-500 ease-in-out"
           }
           onClick={() => {
