@@ -12,6 +12,7 @@ import Skills from "./Components/Sections/Skills";
 import Portfolio from "./Components/Sections/Portfolio";
 import photo from "./Images/photo.jpg";
 import { loadBasic } from "@tsparticles/basic";
+import Sidebar from "./Components/Sidebar";
 function App() {
   const [init, setInit] = useState(false);
   const [theme, setTheme] = useState("dark");
@@ -187,8 +188,27 @@ function App() {
             </button>
           </div>
         </div>
-        <div className="fixed right-24 top-[50%] translate-x-[-50%] translate-y-[-50%]">
+        <div className="fixed right-24 top-[50%] hidden translate-x-[-50%] translate-y-[-50%] md:flex">
           <Navbar sections={sections} activeSectionId={activeSectionId} />
+        </div>
+        <div className="fixed right-10 flex md:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 9h16.5m-16.5 6.75h16.5"
+            />
+          </svg>
+        </div>
+        <div className={`fixed right-0`}>
+          <Sidebar sections={sections} activeSectionId={activeSectionId} />
         </div>
         <div
           className="ml-[1%] mr-[1%] flex flex-col md:ml-[33%] md:mr-[20%] md:h-[140vh]"
@@ -197,13 +217,13 @@ function App() {
           <Introduction />
         </div>
         <div
-          className="flex h-[100vh] flex-col md:ml-[33%] md:mr-[20%]"
+          className="flex h-[100%] flex-col md:ml-[33%] md:mr-[20%]"
           id="section2"
         >
           <About />
         </div>
         <div
-          className="flex h-[100vh] flex-col md:ml-[33%] md:mr-[20%]"
+          className="mt-[10rem] flex h-[100vh] flex-col md:ml-[33%] md:mr-[20%] md:mt-0"
           id="section3"
         >
           <Resume />

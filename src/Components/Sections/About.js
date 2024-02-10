@@ -3,10 +3,6 @@ import Title from "./Title";
 
 const About = ({ active }) => {
   const aboutRef = useRef(null);
-
-  //   if (active === "about") {
-  //     aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-  //   }
   const Icon = () => {
     return (
       <svg
@@ -26,20 +22,21 @@ const About = ({ active }) => {
     );
   };
   return (
-    <div className="mt-[8%] flex flex-col gap-10 border" ref={aboutRef}>
+    <div className="mt-[8%] flex flex-col gap-10" ref={aboutRef}>
       <Title Icon={Icon}>About</Title>
 
-      <div className="text-7xl font-light leading-[5rem] dark:text-white">
-        {/* <div className="flex">
-          <div>Say Hi from</div>
-          <div className="ml-6 text-[#28E98C]"> Roman</div>
-          <div>,</div>
-        </div>{" "}
-        <p>Web Designer and Developer</p> */}
+      <div className="text-5xl font-light leading-[5rem] dark:text-white">
+        <div className="flex">
+          <div>My</div>
+          <div className="ml-3 text-[#28E98C] md:ml-6"> Story</div>
+        </div>
       </div>
-      <div className="text-sm font-medium dark:text-[#939393]">
-        I design and develop modern websites with outmost focus on user
-        experience
+      <div className="text-sm font-medium leading-[1.5rem] dark:text-[#939393]">
+        Fascinated about the vast but exciting world of frontend technologies, I
+        started writing head, title, body. Learned about React library along
+        with Next for SSR and it's advantages. Curious about backend
+        technologies and how they work, explored Node JS along with Express JS
+        and MongoDB for database.
       </div>
     </div>
   );
