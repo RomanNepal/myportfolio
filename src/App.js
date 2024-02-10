@@ -15,10 +15,8 @@ import { loadBasic } from "@tsparticles/basic";
 import Sidebar from "./Components/Sidebar";
 function App() {
   const [init, setInit] = useState(false);
-  const [theme, setTheme] = useState("dark");
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
-  const [currentRef, setCurrentRef] = useState("");
   const [activeSectionId, setActiveSectionId] = useState("section1");
 
   const particlesLoaded = (container) => {
@@ -88,14 +86,14 @@ function App() {
             setShow(true);
           }}
         >
-          <div className="rounded-full border p-2 text-white">
+          <div className="rounded-full border border-gray-600 p-2 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="h-6 w-6"
+              class="h-6 w-6 text-black dark:text-gray-400"
             >
               <path
                 stroke-linecap="round"
