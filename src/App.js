@@ -16,7 +16,7 @@ import Sidebar from "./Components/Sidebar";
 function App() {
   const [init, setInit] = useState(false);
   const [theme, setTheme] = useState("dark");
-  const [active, setActive] = useState("home");
+  const [show, setShow] = useState(true);
 
   const [currentRef, setCurrentRef] = useState("");
   const [activeSectionId, setActiveSectionId] = useState("section1");
@@ -62,16 +62,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
-  const handleThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-  useEffect(() => {
     if (!init) {
       initParticlesEngine(async (engine) => {
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -89,13 +79,31 @@ function App() {
   return (
     <>
       <div className="bg-white p-4 font-inter transition duration-500 ease-in-out dark:bg-[#1B1B1B] md:p-4 lg:flex lg:flex-col lg:p-0">
+        <div className="fixed right-24 top-4 hidden rounded-[20px] md:flex">
+          <Switch />
+        </div>
         <div
-          className="fixed right-24 top-4 flex rounded-[20px]"
+          className="fixed right-5 top-4 flex rounded-[20px] md:hidden"
           onClick={() => {
-            handleThemeSwitch();
+            setShow(true);
           }}
         >
-          <Switch />
+          <div className="rounded-full border p-2 text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 9h16.5m-16.5 6.75h16.5"
+              />
+            </svg>
+          </div>
         </div>
         {/* border-gray-200 p-5 dark:border-gray-600 */}
         <div className="flex h-[100vh] flex-col items-center justify-around rounded-[2rem] border p-4 dark:border-gray-600 dark:text-white md:left-10 md:flex md:h-[80vh]  lg:fixed lg:top-[50%] lg:w-[20%] lg:translate-x-[10%] lg:translate-y-[-50%] lg:flex-col ">
@@ -207,8 +215,16 @@ function App() {
             />
           </svg>
         </div>
-        <div className={`fixed right-0`}>
-          <Sidebar sections={sections} activeSectionId={activeSectionId} />
+        <div></div>
+        <div
+          className={`fixed ${show ? "right-0" : "right-[-20rem]"} top-0 h-full w-[80%] bg-gray-800 text-white transition-all md:hidden`}
+        >
+          <Sidebar
+            sections={sections}
+            activeSectionId={activeSectionId}
+            show={show}
+            setShow={setShow}
+          />
         </div>
         <div
           className="ml-[1%] mr-[1%] flex flex-col md:ml-[33%] md:mr-[20%] md:h-[140vh]"
