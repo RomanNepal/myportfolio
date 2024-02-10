@@ -128,7 +128,7 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
             removeHover();
           }}
         >
-          <div
+          {/* <div
             className={
               (over === "section3" ? "flex" : "hidden") +
               " transtition absolute left-[-7rem] w-[6rem] items-center px-2 text-gray-400 duration-500 ease-in"
@@ -138,7 +138,7 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
               Resume
             </div>
             <div className="h-[12px] w-[20%] border-[8px] border-gray-700 border-b-transparent border-r-transparent border-t-transparent"></div>
-          </div>
+          </div> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -218,7 +218,7 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
             viewBox="0 0 24 24"
             stroke-width="1.3"
             stroke="currentColor"
-            class="h-5 w-5"
+            class="h-5 w-5 hover:text-[#28E98C]"
           >
             <path
               stroke-linecap="round"
