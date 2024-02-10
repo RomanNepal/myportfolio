@@ -17,7 +17,7 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
     setOver("");
   };
   return (
-    <div className="flex h-full justify-between px-4 pt-10">
+    <div className="flex h-[100vh] justify-between px-4 pt-10">
       <div className="items-left justify-left z-10 flex w-[80%] flex-col gap-4 rounded-3xl p-6">
         <div
           className={
@@ -232,8 +232,8 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
           className={
             (activeSectionId === "section5"
               ? "text-[#28E98C]"
-              : "text-black hover:text-[#28E98C] dark:text-white") +
-            " items-centercursor-pointer relative  flex gap-3 transition duration-500 ease-in-out"
+              : "text-white hover:text-[#28E98C] dark:text-white") +
+            " relative flex cursor-pointer items-center gap-3 transition duration-500 ease-in-out"
           }
           onClick={() => {
             handleNavClick("section5");

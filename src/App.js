@@ -217,7 +217,7 @@ function App() {
         </div>
         <div></div>
         <div
-          className={`fixed ${show ? "right-0" : "right-[-20rem]"} top-0 h-full w-[80%] bg-gray-800 text-white transition-all md:hidden`}
+          className={`fixed ${show ? "right-0" : "right-[-20rem]"} top-0 z-30 h-full w-[80%] bg-gray-800 text-white transition-all md:hidden`}
         >
           <Sidebar
             sections={sections}
