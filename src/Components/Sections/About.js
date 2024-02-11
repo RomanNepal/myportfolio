@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
 import Title from "./Title";
+import { useInView } from "framer-motion";
 
 const About = ({ active }) => {
   const aboutRef = useRef(null);
+  const isInView = useInView(aboutRef);
   const Icon = () => {
     return (
       <svg
@@ -25,13 +27,16 @@ const About = ({ active }) => {
     <div className="mt-[8%] flex flex-col gap-10" ref={aboutRef}>
       <Title Icon={Icon}>About</Title>
 
-      <div className="text-5xl font-light leading-[5rem] dark:text-white">
+      <div className={` text-5xl font-light leading-[5rem]  dark:text-white`}>
         <div className="flex">
           <div>My</div>
           <div className="ml-3 text-[#28E98C] md:ml-6"> Story</div>
         </div>
       </div>
-      <div className="text-sm font-medium leading-[1.5rem] dark:text-[#939393]">
+      <div
+        ref={aboutRef}
+        className={`${isInView ? "scale-100 opacity-100 " : " scale-0 opacity-0 "} text-sm font-medium leading-[1.5rem] transition-all duration-1000 dark:text-[#939393]`}
+      >
         Fascinated about the vast but exciting world of frontend technologies, I
         started writing head, title, body. Learned about React library along
         with Next for SSR and it's advantages. Curious about backend
