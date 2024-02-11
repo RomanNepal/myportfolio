@@ -1,10 +1,15 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Title from "./Title";
+import { useInView } from "framer-motion";
 
 const Introduction = () => {
   const introRef = useRef(null);
+  const isInView = useInView(introRef);
   const currentDate = new Date();
   const totalYear = currentDate.getFullYear() - 2021;
+  useEffect(() => {
+    console.log("Element is in view: ", isInView);
+  }, [isInView]);
   const Icon = () => {
     return (
       <svg
@@ -25,7 +30,7 @@ const Introduction = () => {
   };
   return (
     <div
-      className="mt-[8%] flex h-full flex-col justify-between gap-10 border-gray-200"
+      className={`${isInView ? "translate-x-0 opacity-100 " : "translate-x-[-3rem] opacity-0 "} duration-2000 mt-[8%] flex h-full flex-col justify-between gap-10 border-gray-200 transition-all`}
       ref={introRef}
     >
       <div className="flex flex-col gap-10">

@@ -29,17 +29,35 @@ const Resume = ({ active }) => {
     <div className="mt-[8%] flex flex-col gap-10" ref={resumeRef}>
       <Title Icon={Icon}>Resume</Title>
 
-      <div className="text-7xl font-light leading-[5rem] dark:text-white">
-        {/* <div className="flex">
-          <div>Say Hi from</div>
-          <div className="ml-6 text-[#28E98C]"> Roman</div>
-          <div>,</div>
-        </div>{" "}
-        <p>Web Designer and Developer</p> */}
+      <div className=" text-5xl font-light leading-[5rem] dark:text-white">
+        <p>Education</p>
       </div>
-      <div className="text-sm font-medium dark:text-[#939393]">
-        I design and develop modern websites with outmost focus on user
-        experience
+      <div className="relative flex flex-col gap-20">
+        <div className="absolute left-[1.55%] top-2 h-full border-l border-gray-700 lg:left-[0.8%]"></div>
+        <div className="flex flex-col gap-4 dark:text-white">
+          <div className="flex items-center gap-10">
+            <div className="z-10 h-3 w-3 rounded-full bg-[#28E98C]"></div>
+            <div>2018-2023</div>
+          </div>
+          <div className="ml-12 flex flex-col gap-3">
+            <div className=" text-2xl">Amrit Science Campus</div>
+            <div className="text-sm text-gray-400">
+              {" "}
+              Bachelors of Science in Computer Science and Information
+              Technology (B.Sc.CSIT)
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-4 dark:text-white">
+          <div className="flex items-center gap-10">
+            <div className="z-10 h-3 w-3 rounded-full bg-[#28E98C]"></div>
+            <div>2015-2017</div>
+          </div>
+          <div className="ml-12 flex flex-col gap-3">
+            <div className=" text-2xl">Sushma Godawari College</div>
+            <div className="text-sm text-gray-400"> +2</div>
+          </div>
+        </div>
       </div>
     </div>
   );

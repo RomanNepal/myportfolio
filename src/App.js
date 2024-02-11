@@ -13,15 +13,13 @@ import Portfolio from "./Components/Sections/Portfolio";
 import photo from "./Images/photo.jpg";
 import { loadBasic } from "@tsparticles/basic";
 import Sidebar from "./Components/Sidebar";
+import { useInView } from "framer-motion";
 function App() {
   const [init, setInit] = useState(false);
   const [show, setShow] = useState(false);
 
   const [activeSectionId, setActiveSectionId] = useState("section1");
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -215,7 +213,7 @@ function App() {
         </div>
         <div></div>
         <div
-          className={`fixed ${show ? "right-0" : "right-[-20rem]"} top-0 z-30 h-full w-[80%] bg-gray-800 text-white transition-all md:hidden`}
+          className={`fixed ${show ? "right-0" : "right-[-100%]"} top-0 z-30 h-full w-[80%] bg-gray-800 text-white transition-all md:hidden`}
         >
           <Sidebar
             sections={sections}
@@ -225,7 +223,7 @@ function App() {
           />
         </div>
         <div
-          className="ml-[1%] mr-[1%] flex flex-col md:ml-[33%] md:mr-[20%] md:h-[140vh]"
+          className={`ml-[1%] mr-[1%] flex transform flex-col overflow-hidden md:ml-[33%] md:mr-[20%] md:h-[140vh]`}
           id="section1"
         >
           <Introduction />
@@ -257,7 +255,6 @@ function App() {
       </div>
       <Particles
         id="tsparticles"
-        particlesLoaded={particlesLoaded}
         options={{
           background: {
             color: {

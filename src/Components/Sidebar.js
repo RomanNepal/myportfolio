@@ -17,7 +17,7 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
     setOver("");
   };
   return (
-    <div className="flex h-[100vh] justify-between px-4 pt-10">
+    <div className="flex h-[100vh] justify-around px-4 pt-10">
       <div className="items-left justify-left z-10 flex w-[80%] flex-col gap-4 rounded-3xl p-6">
         <div
           className={
