@@ -3,10 +3,10 @@ import Title from "./Title";
 import useIsInViewport from "../../Hooks/useIsInViewport";
 
 const Resume = ({ active }) => {
-  const resumeRef = useRef(null);
-  //   if (active === "resume") {
-  //     resumeRef.current?.scrollIntoView({ behavior: "smooth" });
-  //   }
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const isInView1 = useIsInViewport(ref1);
+  const isInView2 = useIsInViewport(ref2);
   const Icon = () => {
     return (
       <svg
@@ -26,7 +26,7 @@ const Resume = ({ active }) => {
     );
   };
   return (
-    <div className="mt-[8%] flex flex-col gap-10" ref={resumeRef}>
+    <div className="mt-[8%] flex flex-col gap-10">
       <Title Icon={Icon}>Resume</Title>
 
       <div className=" text-5xl font-light leading-[5rem] dark:text-white">
@@ -34,7 +34,10 @@ const Resume = ({ active }) => {
       </div>
       <div className="relative flex flex-col gap-20">
         <div className="absolute left-[1.55%] top-2 h-full border-l border-gray-700 lg:left-[0.8%]"></div>
-        <div className="flex flex-col gap-4 dark:text-white">
+        <div
+          className={`${isInView1 ? "translate-x-0 opacity-100" : "translate-x-10 opacity-50 "} flex flex-col gap-4 transition-all duration-1000 dark:text-white`}
+          ref={ref1}
+        >
           <div className="flex items-center gap-10">
             <div className="z-10 h-3 w-3 rounded-full bg-[#28E98C]"></div>
             <div>2018-2023</div>
@@ -48,7 +51,10 @@ const Resume = ({ active }) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 dark:text-white">
+        <div
+          className={`${isInView1 ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0 "} flex flex-col gap-4 transition-all delay-500 duration-1000 dark:text-white`}
+          ref={ref2}
+        >
           <div className="flex items-center gap-10">
             <div className="z-10 h-3 w-3 rounded-full bg-[#28E98C]"></div>
             <div>2015-2017</div>

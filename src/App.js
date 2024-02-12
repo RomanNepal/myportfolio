@@ -235,7 +235,7 @@ function App() {
           <About />
         </div>
         <div
-          className="mt-[10rem] flex h-[100vh] flex-col md:ml-[33%] md:mr-[20%] md:mt-0"
+          className="mt-[10rem] flex h-[100vh] flex-col md:ml-[33%] md:mr-[20%] md:mt-[10rem]"
           id="section3"
         >
           <Resume />
