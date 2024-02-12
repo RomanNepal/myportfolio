@@ -74,7 +74,7 @@ function App() {
   }, []);
   return (
     <>
-      <div className="bg-white p-4 font-inter transition duration-500 ease-in-out dark:bg-[#1B1B1B] md:p-4 lg:flex lg:flex-col lg:p-0">
+      <div className="overflow-hidden bg-white p-4 font-inter transition duration-500 ease-in-out dark:bg-[#1B1B1B] md:p-4 lg:flex lg:flex-col lg:p-0">
         <div className="fixed right-24 top-4 hidden rounded-[20px] md:flex">
           <Switch />
         </div>
