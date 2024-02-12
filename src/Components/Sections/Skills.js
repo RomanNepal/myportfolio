@@ -19,7 +19,7 @@ const Skills = ({ active }) => {
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-4 h-4"
+        class="h-4 w-4"
       >
         <path
           stroke-linecap="round"
@@ -30,9 +30,9 @@ const Skills = ({ active }) => {
     );
   };
   return (
-    <div className="flex flex-col gap-10 mt-[8%]">
+    <div className="mt-[8%] flex flex-col gap-10">
       <Title Icon={Icon}>Skills</Title>
-      <div className="flex flex-wrap gap-10 text-sm">
+      <div className="flex flex-wrap justify-center gap-10 text-sm md:justify-normal">
         <SkillsCard src={html} title={"html"} />
         <SkillsCard src={css} title={"css"} />
         <SkillsCard src={js} title={"javascript"} />
