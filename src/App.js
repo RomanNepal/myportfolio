@@ -14,7 +14,10 @@ import photo from "./Images/photo.jpg";
 import { loadBasic } from "@tsparticles/basic";
 import Sidebar from "./Components/Sidebar";
 import { useInView } from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
 function App() {
+  const color = useSelector((state) => state.color.value);
+
   const [init, setInit] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -116,7 +119,9 @@ function App() {
           </div>
           <div className="flex w-[80%] justify-between">
             <a href="https://www.facebook.com/roman.nepal.1">
-              <div className="rounded-full border border-gray-400 fill-gray-400 p-3 hover:border-[#28E98C] hover:fill-[#28E98C]">
+              <div
+                className={`rounded-full border border-gray-400 fill-gray-400 p-3 hover:border-[#28E98C] hover:fill-[#28E98C]`}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="white"
@@ -173,7 +178,9 @@ function App() {
             </a>
           </div>
           <div className="w-full">
-            <button className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-[#28E98C]  bg-[#28E98C] px-4 py-3 text-white transition ease-in hover:bg-[#1B1B1B] dark:text-black dark:hover:text-[#28E98C]">
+            <button
+              className={`flex w-full items-center justify-center gap-2 rounded-full border-2  border-[${color}] dark:border-[${color}]   bg-[${color}]  px-4 py-3 text-white transition ease-in hover:bg-[#1B1B1B] hover:text-[${color}] dark:text-black dark:hover:text-[${color}]`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

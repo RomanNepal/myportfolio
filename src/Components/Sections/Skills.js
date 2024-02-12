@@ -32,7 +32,7 @@ const Skills = ({ active }) => {
   return (
     <div className="mt-[8%] flex flex-col gap-10">
       <Title Icon={Icon}>Skills</Title>
-      <div className="flex flex-wrap justify-center gap-10 text-sm md:justify-normal">
+      <div className="flex flex-wrap gap-10 text-sm md:justify-normal">
         <SkillsCard src={html} title={"html"} />
         <SkillsCard src={css} title={"css"} />
         <SkillsCard src={js} title={"javascript"} />

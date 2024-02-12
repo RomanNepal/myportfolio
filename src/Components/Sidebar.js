@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import Tooltip from "./Tooltip";
 import Switch from "./Switch";
+import { useDispatch, useSelector } from "react-redux";
+import { setColor } from "../Features/color/colorSlice";
 
 const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
   const [over, setOver] = useState("");
+  const color = useSelector((state) => state.color.value);
+  const dispatch = useDispatch();
+  console.log("color is: ", color);
   const handleNavClick = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -281,6 +286,51 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
         >
           <Switch />
           <div>Dark Mode</div>
+        </div>
+        <div className="mt-4 flex flex-col gap-4">
+          <div className="font-medium">Select Theme Color</div>
+          <div className="flex gap-4">
+            <div
+              className="flex gap-4"
+              onClick={() => {
+                dispatch(setColor("#28E98C"));
+              }}
+            >
+              <div className="h-12 w-12 cursor-pointer rounded-full bg-[#28E98C]"></div>
+            </div>
+            <div
+              className="flex gap-4"
+              onClick={() => {
+                dispatch(setColor("#E4AF12"));
+              }}
+            >
+              <div className="h-12 w-12 cursor-pointer rounded-full bg-[#E4AF12]"></div>
+            </div>
+            <div
+              className="flex gap-4"
+              onClick={() => {
+                dispatch(setColor("#FE6F1D"));
+              }}
+            >
+              <div className="h-12 w-12 cursor-pointer rounded-full bg-[#FE6F1D]"></div>
+            </div>
+            <div
+              className="flex gap-4"
+              onClick={() => {
+                dispatch(setColor("#14C5FD"));
+              }}
+            >
+              <div className="h-12 w-12 cursor-pointer rounded-full bg-[#14C5FD]"></div>
+            </div>
+            <div
+              className="flex gap-4"
+              onClick={() => {
+                dispatch(setColor("#F31313"));
+              }}
+            >
+              <div className="h-12 w-12 cursor-pointer rounded-full bg-[#F31313]"></div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="" id="crossIcon" onClick={() => setShow(false)}>

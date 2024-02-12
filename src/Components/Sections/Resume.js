@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import Title from "./Title";
-import useIsInViewport from "../../Hooks/useIsInViewport";
+import { useInView } from "framer-motion";
 
 const Resume = ({ active }) => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
-  const isInView1 = useIsInViewport(ref1);
-  const isInView2 = useIsInViewport(ref2);
+  const isInView1 = useInView(ref1);
+  const isInView2 = useInView(ref2);
   const Icon = () => {
     return (
       <svg
@@ -35,7 +35,7 @@ const Resume = ({ active }) => {
       <div className="relative flex flex-col gap-20">
         <div className="absolute left-[1.55%] top-2 h-full border-l border-gray-700 lg:left-[0.8%]"></div>
         <div
-          className={`${isInView1 ? "translate-x-0 opacity-100" : "translate-x-10 opacity-50 "} flex flex-col gap-4 transition-all duration-1000 dark:text-white`}
+          className={`${isInView1 ? "translate-x-0 opacity-100 " : "translate-x-10 opacity-50 "} flex flex-col gap-4 text-black transition-all duration-1000 dark:text-white`}
           ref={ref1}
         >
           <div className="flex items-center gap-10">
@@ -52,7 +52,7 @@ const Resume = ({ active }) => {
           </div>
         </div>
         <div
-          className={`${isInView1 ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0 "} flex flex-col gap-4 transition-all delay-500 duration-1000 dark:text-white`}
+          className={`${isInView2 ? "translate-x-0 opacity-100 " : " translate-x-10 opacity-0 "} flex flex-col gap-4 text-black transition-all delay-500 duration-1000 dark:text-white`}
           ref={ref2}
         >
           <div className="flex items-center gap-10">
