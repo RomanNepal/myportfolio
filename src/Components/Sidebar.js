@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Switch from "./Switch";
 import { useDispatch, useSelector } from "react-redux";
-import { setColor } from "../Features/Color/colorSlice";
+import { setColor } from "../features/color/colorSlice";
 
 const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
   const [over, setOver] = useState("");
