@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Switch from "./Switch";
 import { useDispatch, useSelector } from "react-redux";
 import { setColor } from "../features/color/colorSlice";
