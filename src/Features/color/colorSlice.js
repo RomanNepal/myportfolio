@@ -2,8 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   value: "#28E98C",
 };
+
 export const colorSlice = createSlice({
-  name: "counter",
+  name: "color",
   initialState,
   reducers: {
     setColor: (state, action) => {
@@ -11,6 +12,5 @@ export const colorSlice = createSlice({
     },
   },
 });
-
 export const { setColor } = colorSlice.actions;
 export default colorSlice.reducer;

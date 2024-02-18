@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import Tooltip from "./Tooltip";
+import React, { useContext, useState } from "react";
 import Switch from "./Switch";
 import { useDispatch, useSelector } from "react-redux";
-import { setColor } from "../Features/color/colorSlice";
+import { setColor } from "../features/color/colorSlice";
 
 const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
   const [over, setOver] = useState("");
   const color = useSelector((state) => state.color.value);
   const dispatch = useDispatch();
-  console.log("color is: ", color);
+  console.log("color in sidebarrrrrrrr: ", color);
   const handleNavClick = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -25,6 +24,7 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
     <div className="flex h-[100vh] justify-around px-4 pt-10">
       <div className="items-left justify-left z-10 flex w-[80%] flex-col gap-4 rounded-3xl p-6">
         <div
+          style={{ color: activeSectionId === "section1" ? color : "" }}
           className={
             (activeSectionId === "section1"
               ? "text-[#28E98C]"
@@ -71,6 +71,7 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
           <div>Home</div>
         </div>
         <div
+          style={{ color: activeSectionId === "section2" ? color : "" }}
           className={
             (activeSectionId === "section2"
               ? "text-[#28E98C]"
@@ -116,6 +117,7 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
           <div>About</div>
         </div>
         <div
+          style={{ color: activeSectionId === "section3" ? color : "" }}
           className={
             (activeSectionId === "section3"
               ? "text-[#28E98C]"
@@ -189,6 +191,7 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
         </svg>
       </div> */}
         <div
+          style={{ color: activeSectionId === "section4" ? color : "" }}
           className={
             (activeSectionId === "section4"
               ? "text-[#28E98C]"
@@ -234,6 +237,7 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
           <div>Skills</div>
         </div>
         <div
+          style={{ color: activeSectionId === "section5" ? color : "" }}
           className={
             (activeSectionId === "section5"
               ? "text-[#28E98C]"

@@ -1,9 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import Title from "./Title";
 import { useInView } from "framer-motion";
+import { useSelector } from "react-redux";
 
 const Introduction = () => {
+  const color = useSelector((state) => state.color.value);
   const introRef = useRef(null);
+
   const isInView = useInView(introRef);
   const currentDate = new Date();
   const totalYear = currentDate.getFullYear() - 2021;
@@ -39,7 +42,10 @@ const Introduction = () => {
         <div className="text-6xl font-light leading-[4rem] dark:text-white md:text-7xl md:leading-[5rem]">
           <div className="flex flex-wrap">
             <div>Say Hi from</div>
-            <div className="text-[#28E98C] md:ml-6"> Roman</div>
+            <div className=" md:ml-6" style={{ color: color }}>
+              {" "}
+              Roman
+            </div>
             <div>,</div>
           </div>{" "}
           <p>Web Designer & Developer</p>
@@ -51,13 +57,21 @@ const Introduction = () => {
       </div>
       <div className="mb-[20%] flex justify-start gap-[30%] dark:text-white md:gap-[15%]">
         <div className="flex w-[20%] flex-col gap-8 md:w-[10%]">
-          <p className="text-6xl font-[300] text-[#28E98C] md:text-7xl">
+          <p
+            style={{ color: color }}
+            className="text-6xl font-[300] text-[#28E98C] md:text-7xl"
+          >
             {totalYear}+
           </p>
           <p className="text-gray-400">Years of experience</p>
         </div>
         <div className="flex flex-col gap-8 md:w-[20%]">
-          <p className="text-6xl font-[300] text-[#28E98C] md:text-7xl">10+</p>
+          <p
+            style={{ color: color }}
+            className="text-6xl font-[300] md:text-7xl"
+          >
+            10+
+          </p>
           <p className="text-gray-400">10+ projects completed</p>
         </div>
       </div>

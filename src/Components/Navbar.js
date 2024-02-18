@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Tooltip from "./Tooltip";
+import { useSelector } from "react-redux";
 
 const Navbar = ({ sections, active, setActive, activeSectionId }) => {
   const [over, setOver] = useState("");
@@ -15,13 +16,13 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
   const removeHover = (e) => {
     setOver("");
   };
+  const color = useSelector((state) => state.color.value);
   return (
     <div className="z-10 flex w-8 flex-col items-center justify-center gap-4 rounded-3xl border border-gray-500 p-6">
       <div
+        style={{ color: activeSectionId === "section1" ? color : "" }}
         className={
-          (activeSectionId === "section1"
-            ? "text-[#28E98C]"
-            : "text-black dark:text-white") +
+          (activeSectionId === "section1" ? "" : "text-black dark:text-white") +
           " relative cursor-pointer transition duration-500 ease-in-out"
         }
         onClick={() => {
@@ -62,6 +63,7 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         </svg>
       </div>
       <div
+        style={{ color: activeSectionId === "section2" ? color : "" }}
         className={
           (activeSectionId === "section2"
             ? "text-[#28E98C]"
@@ -106,6 +108,7 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         </svg>
       </div>
       <div
+        style={{ color: activeSectionId === "section3" ? color : "" }}
         className={
           (activeSectionId === "section3"
             ? "text-[#28E98C]"
@@ -178,6 +181,7 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         </svg>
       </div> */}
       <div
+        style={{ color: activeSectionId === "section4" ? color : "" }}
         className={
           (activeSectionId === "section4"
             ? "text-[#28E98C]"
@@ -222,6 +226,7 @@ const Navbar = ({ sections, active, setActive, activeSectionId }) => {
         </svg>
       </div>
       <div
+        style={{ color: activeSectionId === "section5" ? color : "" }}
         className={
           (activeSectionId === "section5"
             ? "text-[#28E98C]"

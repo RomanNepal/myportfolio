@@ -1,23 +1,19 @@
 // Filename - App.js
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Navbar from "./Components/Navbar";
 import Introduction from "./Components/Sections/Introduction";
 import Switch from "./Components/Switch";
 import About from "./Components/Sections/About";
-import useIsInViewport from "./Hooks/useIsInViewport";
 import Resume from "./Components/Sections/Resume";
 import Skills from "./Components/Sections/Skills";
 import Portfolio from "./Components/Sections/Portfolio";
 import photo from "./Images/photo.jpg";
 import { loadBasic } from "@tsparticles/basic";
 import Sidebar from "./Components/Sidebar";
-import { useInView } from "framer-motion";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 function App() {
   const color = useSelector((state) => state.color.value);
-
   const [init, setInit] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -82,7 +78,7 @@ function App() {
           <Switch />
         </div>
         <div
-          className="fixed right-5 top-4 flex rounded-[20px] md:hidden"
+          className="fixed right-5 top-4 z-30 flex rounded-[20px] md:hidden"
           onClick={() => {
             setShow(true);
           }}
@@ -179,7 +175,13 @@ function App() {
           </div>
           <div className="w-full">
             <button
-              className={`flex w-full items-center justify-center gap-2 rounded-full border-2  border-[${color}] dark:border-[${color}]   bg-[${color}]  px-4 py-3 text-white transition ease-in hover:bg-[#1B1B1B] hover:text-[${color}] dark:text-black dark:hover:text-[${color}]`}
+              style={{
+                borderColor: color,
+                backgroundColor: color,
+              }}
+              className={
+                "flex w-full items-center justify-center gap-2 rounded-full border-2 px-4 py-3 text-white transition ease-in dark:text-black dark:hover:bg-[#1B1B1B]  dark:hover:text-white "
+              }
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

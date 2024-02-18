@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Title from "./Title";
 import { useInView } from "framer-motion";
+import { useSelector } from "react-redux";
 
 const About = ({ active }) => {
   const aboutRef = useRef(null);
@@ -23,6 +24,7 @@ const About = ({ active }) => {
       </svg>
     );
   };
+  const color = useSelector((state) => state.color.value);
   return (
     <div className="mt-[8%] flex flex-col gap-10" ref={aboutRef}>
       <Title Icon={Icon}>About</Title>
@@ -30,7 +32,10 @@ const About = ({ active }) => {
       <div className={` text-5xl font-light leading-[5rem]  dark:text-white`}>
         <div className="flex">
           <div>My</div>
-          <div className="ml-3 text-[#28E98C] md:ml-6"> Story</div>
+          <div style={{ color: color }} className="ml-3 md:ml-6">
+            {" "}
+            Story
+          </div>
         </div>
       </div>
       <div

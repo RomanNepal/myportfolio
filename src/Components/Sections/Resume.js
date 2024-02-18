@@ -1,12 +1,14 @@
 import React, { useRef } from "react";
 import Title from "./Title";
 import { useInView } from "framer-motion";
+import { useSelector } from "react-redux";
 
 const Resume = ({ active }) => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const isInView1 = useInView(ref1);
   const isInView2 = useInView(ref2);
+
   const Icon = () => {
     return (
       <svg
@@ -25,6 +27,7 @@ const Resume = ({ active }) => {
       </svg>
     );
   };
+  const color = useSelector((state) => state.color.value);
   return (
     <div className="mt-[8%] flex flex-col gap-10">
       <Title Icon={Icon}>Resume</Title>
@@ -39,7 +42,10 @@ const Resume = ({ active }) => {
           ref={ref1}
         >
           <div className="flex items-center gap-10">
-            <div className="z-10 h-3 w-3 rounded-full bg-[#28E98C]"></div>
+            <div
+              style={{ backgroundColor: color }}
+              className="z-10 h-3 w-3 rounded-full"
+            ></div>
             <div>2018-2023</div>
           </div>
           <div className="ml-12 flex flex-col gap-3">
@@ -56,7 +62,10 @@ const Resume = ({ active }) => {
           ref={ref2}
         >
           <div className="flex items-center gap-10">
-            <div className="z-10 h-3 w-3 rounded-full bg-[#28E98C]"></div>
+            <div
+              style={{ backgroundColor: color }}
+              className="z-10 h-3 w-3 rounded-full"
+            ></div>
             <div>2015-2017</div>
           </div>
           <div className="ml-12 flex flex-col gap-3">
