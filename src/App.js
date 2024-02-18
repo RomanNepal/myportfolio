@@ -255,12 +255,12 @@ function App() {
         >
           <Skills />
         </div>
-        <div
+        {/* <div
           className="ml-[33%] mr-[20%] flex h-[100vh] flex-col"
           id="section5"
         >
           <Portfolio />
-        </div>
+        </div> */}
       </div>
       <Particles
         id="tsparticles"
