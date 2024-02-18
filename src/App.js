@@ -255,7 +255,7 @@ function App() {
         >
           <Skills />
         </div>
-        <div className="ml-[33%] mr-[20%] flex flex-col" id="section5">
+        <div className="flex flex-col md:ml-[33%] md:mr-[20%]" id="section5">
           <Portfolio />
         </div>
       </div>
