@@ -5,6 +5,7 @@ import { setColor } from "../features/color/colorSlice";
 
 const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
   const [over, setOver] = useState("");
+  console.log("over");
   const color = useSelector((state) => state.color.value);
   const dispatch = useDispatch();
   const handleNavClick = (sectionId) => {
