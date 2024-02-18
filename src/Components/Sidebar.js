@@ -7,7 +7,6 @@ const Sidebar = ({ sections, activeSectionId, show, setShow }) => {
   const [over, setOver] = useState("");
   const color = useSelector((state) => state.color.value);
   const dispatch = useDispatch();
-  console.log("color in sidebarrrrrrrr: ", color);
   const handleNavClick = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {

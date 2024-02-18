@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Tooltip from "./Tooltip";
 import { useSelector } from "react-redux";
 
 const Navbar = ({ sections, active, setActive, activeSectionId }) => {
