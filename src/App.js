@@ -130,7 +130,7 @@ function App() {
                 </svg>
               </div>
             </a>
-            <a href="https://www.facebook.com/roman.nepal.1">
+            <a href="https://www.instagram.com/roman.nepal.1/">
               <div className="rounded-full border border-gray-400 fill-gray-400 p-3 hover:border-[#28E98C] hover:fill-[#28E98C]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -174,31 +174,33 @@ function App() {
             </a>
           </div>
           <div className="w-full">
-            <button
-              style={{
-                borderColor: color,
-                backgroundColor: color,
-              }}
-              className={
-                "flex w-full items-center justify-center gap-2 rounded-full border-2 px-4 py-3 text-white transition ease-in dark:text-black dark:hover:bg-[#1B1B1B]  dark:hover:text-white "
-              }
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="h-5 w-5"
+            <a href="mailto:nepalroman100@gmail.com">
+              <button
+                style={{
+                  borderColor: color,
+                  backgroundColor: color,
+                }}
+                className={
+                  "flex w-full items-center justify-center gap-2 rounded-full border-2 px-4 py-3 text-white transition ease-in dark:text-black dark:hover:bg-[#1B1B1B]  dark:hover:text-white "
+                }
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                />
-              </svg>
-              Lets build together
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-5 w-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                  />
+                </svg>
+                Let&apos;s build together
+              </button>
+            </a>
           </div>
         </div>
         <div className="fixed right-24 top-[50%] hidden translate-x-[-50%] translate-y-[-50%] md:flex">

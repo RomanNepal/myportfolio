@@ -4,10 +4,10 @@ const Tooltip = ({ text, children }) => {
   return (
     <div className="relative inline-block">
       <div className="inline-block">{children}</div>
-      <div className="opacity-0 invisible transition-opacity duration-300 absolute z-10 bg-black text-white text-xs rounded py-1 px-2 bottom-full left-1/2 transform -translate-x-1/2">
+      <div className="invisible absolute bottom-full left-1/2 z-10 -translate-x-1/2 transform rounded bg-black px-2 py-1 text-xs text-white opacity-0 transition-opacity duration-300">
         {text}
         <svg
-          className="absolute text-black h-2 w-full left-1/2 top-full transform -translate-x-1/2"
+          className="absolute left-1/2 top-full h-2 w-full -translate-x-1/2 transform text-black"
           x="0px"
           y="0px"
           viewBox="0 0 255 255"
