@@ -8,6 +8,44 @@ import pace from "../../Images/pace.png";
 import paceold from "../../Images/paceold.png";
 import kumarijob from "../../Images/kumarijob.png";
 const Portfolio = () => {
+  const projects = [
+    {
+      image: tms,
+      features: ["Next JS", "Tailwind", "Dashboard", "Attendance"],
+      link: "https://example.com/tms",
+    },
+    {
+      image: pace,
+      features: ["React", "Next JS", "Blog", "Dashboard"],
+      link: "https://www.thepaceinfosys.com/",
+    },
+    {
+      image: paceold,
+      features: ["React", "Next JS", "Tailwind"],
+      link: "https://p-a-c-e-o-l-d.vercel.app/",
+    },
+    {
+      image: gamingstorenepal,
+      features: ["React", "Shopping Cart", "Search & Filter"],
+      link: "https://gamingstorenepal.vercel.app",
+    },
+    {
+      image: crowd,
+      features: ["React", "Ether", "Solidity", "Blockchain", "Tailwind CSS"],
+      link: "https://crowdfundingether.vercel.app",
+    },
+    {
+      image: kumarijob,
+      features: ["HTML/CSS", "Javascript", "Laravel"],
+      link: "https://www.kumarijob.com/",
+    },
+    {
+      image: weather,
+      features: ["React", "Next JS", "Weather API", "Search"],
+      link: "https://weatherdeet.vercel.app",
+    },
+  ];
+
   const Icon = () => {
     return (
       <svg
@@ -29,220 +67,36 @@ const Portfolio = () => {
   return (
     <div className="mt-[8%] flex flex-col gap-10 py-[10rem]">
       <Title Icon={Icon}>Portfolio</Title>
-      <div className="relative flex h-[100%] w-full justify-center overflow-hidden rounded-lg">
-        <img
-          className="h-full w-full rounded-lg object-cover"
-          src={tms}
-          alt="tms"
-        />
 
-        <div
-          className="absolute left-0 top-0 h-full w-full rounded-lg bg-black/40"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(255,255,255,0.006127450980392135) 50%, rgba(40,40,40,1) 100%)",
-          }}
-        ></div>
-        <div className="absolute bottom-4 left-6  flex justify-center gap-2">
-          <div className="rounded-md border px-2 text-xs  text-white">
-            Next JS
-          </div>
-          <div className="rounded-md border px-2 text-xs  text-white">
-            Tailwind
-          </div>
-          <div className="rounded-md border px-2 text-xs  text-white">
-            Dashboard
-          </div>
-          <div className="rounded-md border px-2 text-xs  text-white">
-            Attendance
-          </div>
-        </div>
-      </div>
+      {projects.map((project, index) => (
+        <a href={project.link} key={index}>
+          <div className="relative flex h-[100%] w-full justify-center overflow-hidden rounded-lg">
+            <img
+              className="h-full w-full rounded-lg object-cover"
+              src={project.image}
+              alt="project"
+            />
 
-      <a href="https://www.thepaceinfosys.com/">
-        <div className="relative flex h-[100%] w-full justify-center overflow-hidden rounded-lg">
-          <img
-            className="h-full w-full rounded-lg object-cover"
-            src={pace}
-            alt="pace"
-          />
-
-          <div
-            className="absolute left-0 top-0 h-full w-full rounded-lg bg-black/40"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(255,255,255,0.006127450980392135) 50%, rgba(40,40,40,1) 100%)",
-            }}
-          ></div>
-          <div className="absolute bottom-4 left-6  flex justify-center gap-2">
-            <div className="rounded-md border px-2 text-xs  text-white">
-              React
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Next JS
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Blog
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Dashboard
+            <div
+              className="absolute left-0 top-0 h-full w-full rounded-lg bg-black/40"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(255, 255, 255, 0.006127450980392135) 50%, rgba(40, 40, 40, 1) 100%)",
+              }}
+            ></div>
+            <div className="absolute bottom-4 left-6  flex flex-wrap gap-2">
+              {project.features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="rounded-md border px-2 text-xs  text-white"
+                >
+                  {feature}
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </a>
-
-      <a href="https://p-a-c-e-o-l-d.vercel.app/">
-        <div className="relative flex h-[100%] w-full justify-center overflow-hidden rounded-lg">
-          <img
-            className="h-full w-full rounded-lg object-cover"
-            src={paceold}
-            alt="paceold"
-          />
-
-          <div
-            className="absolute left-0 top-0 h-full w-full rounded-lg bg-black/40"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(255,255,255,0.006127450980392135) 50%, rgba(40,40,40,1) 100%)",
-            }}
-          ></div>
-          <div className="absolute bottom-4 left-6  flex justify-center gap-2">
-            <div className="rounded-md border px-2 text-xs  text-white">
-              React
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Next JS
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Tailwind
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <a href="https://gamingstorenepal.vercel.app">
-        <div className="relative flex h-[100%] w-full justify-center rounded-lg">
-          <img
-            className="h-full w-full rounded-lg"
-            src={gamingstorenepal}
-            alt="portfolio"
-          />
-
-          <div
-            className="absolute left-0 top-0 h-full w-full rounded-lg bg-black/40"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(255,255,255,0.006127450980392135) 50%, rgba(40,40,40,1) 100%)",
-            }}
-          ></div>
-          <div className="absolute bottom-4 left-6  flex justify-center gap-2">
-            <div className="rounded-md border px-2 text-xs  text-white">
-              React
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Shopping Cart
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Search and filter
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="https://crowdfundingether.vercel.app">
-        <div className="relative flex h-[100%] w-full justify-center overflow-hidden rounded-lg">
-          <img
-            className="h-full w-full rounded-lg object-cover"
-            src={crowd}
-            alt="crowd_funding"
-          />
-
-          <div
-            className="absolute left-0 top-0 h-full w-full rounded-lg bg-black/40"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(255,255,255,0.006127450980392135) 50%, rgba(40,40,40,1) 100%)",
-            }}
-          ></div>
-          <div className="absolute bottom-4 left-6  flex justify-center gap-2">
-            <div className="rounded-md border px-2 text-xs  text-white">
-              React
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Ether
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Solidity
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Blockchain
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Tailwind CSS
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <a href="https://www.kumarijob.com/">
-        <div className="relative flex h-[100%] w-full justify-center overflow-hidden rounded-lg">
-          <img
-            className="h-full w-full rounded-lg object-cover"
-            src={kumarijob}
-            alt="kumarijob"
-          />
-
-          <div
-            className="absolute left-0 top-0 h-full w-full rounded-lg bg-black/40"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(255,255,255,0.006127450980392135) 50%, rgba(40,40,40,1) 100%)",
-            }}
-          ></div>
-          <div className="absolute bottom-4 left-6  flex justify-center gap-2">
-            <div className="rounded-md border px-2 text-xs  text-white">
-              HTML/CSS
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Javascript
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Laravel
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <a href="https://weatherdeet.vercel.app">
-        <div className="relative flex h-[100%] w-full justify-center overflow-hidden rounded-lg">
-          <img
-            className="h-full w-full rounded-lg object-cover"
-            src={weather}
-            alt="weather"
-          />
-
-          <div
-            className="absolute left-0 top-0 h-full w-full rounded-lg bg-black/40"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(255,255,255,0.006127450980392135) 50%, rgba(40,40,40,1) 100%)",
-            }}
-          ></div>
-          <div className="absolute bottom-4 left-6  flex justify-center gap-2">
-            <div className="rounded-md border px-2 text-xs  text-white">
-              React
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Next JS
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Weather API
-            </div>
-            <div className="rounded-md border px-2 text-xs  text-white">
-              Search
-            </div>
-          </div>
-        </div>
-      </a>
+        </a>
+      ))}
     </div>
   );
 };
