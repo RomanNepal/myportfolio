@@ -12,7 +12,7 @@ const Portfolio = () => {
     {
       image: tms,
       features: ["Next JS", "Tailwind", "Dashboard", "Attendance"],
-      link: "https://example.com/tms",
+      link: "https://drive.google.com/file/d/1o47eMoaT9EXgH1wi_ifWoqtHYV_dEHJs/view",
     },
     {
       image: pace,
