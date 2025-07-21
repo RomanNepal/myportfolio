@@ -4,11 +4,23 @@ import gamingstorenepal from "../../Images/gamingstorenepal.png";
 import crowd from "../../Images/crowdfundingeher.png";
 import weather from "../../Images/weather.png";
 import tms from "../../Images/tms.png";
+import educsit from "../../Images/educsit.png";
 import pace from "../../Images/pace.png";
 import paceold from "../../Images/paceold.png";
 import kumarijob from "../../Images/kumarijob.png";
 const Portfolio = () => {
   const projects = [
+    {
+      image: educsit,
+      features: [
+        "Next JS",
+        "Tailwind",
+        "Dashboard",
+        "User management",
+        "Bulk import",
+      ],
+      link: "https://educsit.com/",
+    },
     {
       image: tms,
       features: ["Next JS", "Tailwind", "Dashboard", "Attendance"],
