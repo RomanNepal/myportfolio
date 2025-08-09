@@ -8,6 +8,8 @@ import educsit from "../../Images/educsit.png";
 import pace from "../../Images/pace.png";
 import paceold from "../../Images/paceold.png";
 import kumarijob from "../../Images/kumarijob.png";
+import vamika from "../../Images/vamika.png";
+import rallygully from "../../Images/rally gully.png";
 const Portfolio = () => {
   const projects = [
     {
@@ -55,6 +57,16 @@ const Portfolio = () => {
       image: weather,
       features: ["React", "Next JS", "Weather API", "Search"],
       link: "https://weatherdeet.vercel.app",
+    },
+    {
+      image: vamika,
+      features: ["React", "Next JS", "Tailwind CSS"],
+      link: "https://vamikahomz.com/",
+    },
+    {
+      image: rallygully,
+      features: ["React", "Next JS", "Tailwind CSS"],
+      link: "https://rallygully.com/",
     },
   ];
 
