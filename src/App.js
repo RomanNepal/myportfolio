@@ -104,7 +104,7 @@ function App() {
         <div className="flex h-[100vh] flex-col items-center justify-around rounded-[2rem] border p-4 dark:border-gray-600 dark:text-white md:left-10 md:flex md:h-[80vh]  lg:fixed lg:top-[50%] lg:w-[20%] lg:translate-x-[10%] lg:translate-y-[-50%] lg:flex-col ">
           <div>Web Developer</div>
           <div className="flex h-[40%] w-[90%] items-center justify-center overflow-hidden rounded-3xl">
-            <img src={photo}></img>
+            <img src={photo} alt="photo"></img>
           </div>
           <div className="flex flex-col gap-2">
             <div className="text-xl font-[300]">nepalroman100@gmail.com</div>

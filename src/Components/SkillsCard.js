@@ -8,6 +8,7 @@ const SkillsCard = ({ src, title }) => {
         <div className="flex h-20 w-20 items-center overflow-hidden rounded-full md:h-24 md:w-24">
           <img
             src={src}
+            alt={'skill'}
             style={{ objectFit: "cover", height: "125%", width: "125%" }}
           ></img>
         </div>
