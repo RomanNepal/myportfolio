@@ -11,8 +11,14 @@ import paceold from "../../Images/paceold.png";
 import kumarijob from "../../Images/kumarijob.png";
 import vamika from "../../Images/vamika.png";
 import rallygully from "../../Images/rally gully.png";
+import algoviews from '../../Images/algoviews.png'
 const Portfolio = () => {
   const projects = [
+    {
+      image: algoviews,
+      features: ["React", "Tailwind CSS", "Algorithms", "Visualizer"],
+      link: "https://algoviews-zeta.vercel.app/",
+    },
     {
       image: hundred,
       features: [
